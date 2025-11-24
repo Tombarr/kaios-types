@@ -10,7 +10,6 @@ jobs:
     permissions:
       contents: read
       id-token: write # Required for provenance and trusted publishing
-      pages: write # Required for GitHub Pages
 
     steps:
       - name: Checkout code
@@ -28,27 +27,6 @@ jobs:
       - name: Validate (Lint, Test, Type Check)
         run: npm run validate
 
-      - name: Publish to NPM # Uses Trusted Publishing on npmjs.com
+      - name: Publish to NPM
+        # Uses Trusted Publishing on npmjs.com
         run: npm publish --provenance --access public
-
-      - name: Generate Documentation
-        run: npm run docs
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: 'docs/'
-
-  deploy-docs:
-    needs: publish
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4

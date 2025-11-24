@@ -1,0 +1,31 @@
+# Test files
+tests/
+*.test.ts
+*.spec.ts
+vitest.config.ts
+
+# Development files
+.github/
+.vscode/
+node_modules/
+.git/
+.gitignore
+
+# Documentation (keep only README in package)
+API_OVERVIEW.md
+CLAUDE.md
+docs/
+
+# Config files
+.eslintrc.js
+.eslintrc.json
+.prettierrc
+.prettierrc.js
+.prettierrc.json
+tsconfig.test.json
+eslint.config.js
+
+# Build artifacts
+*.log
+*.tgz
+.DS_Store

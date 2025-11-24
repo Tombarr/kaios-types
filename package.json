@@ -1,0 +1,70 @@
+{
+  "name": "kaios-types",
+  "version": "0.1.1",
+  "description": "TypeScript type definitions for KaiOS 2.5 Web APIs",
+  "main": "types.d.ts",
+  "types": "types.d.ts",
+  "files": [
+    "types.d.ts",
+    "common.d.ts",
+    "apps/",
+    "bluetooth/",
+    "browser/",
+    "data/",
+    "media/",
+    "network/",
+    "nfc/",
+    "settings/",
+    "system/",
+    "telephony/",
+    "wifi/"
+  ],
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:types": "tsc --noEmit",
+    "lint": "eslint \"**/*.{ts,d.ts}\"",
+    "lint:fix": "eslint \"**/*.{ts,d.ts}\" --fix",
+    "format": "prettier --write \"**/*.{ts,d.ts,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,d.ts,json,md}\"",
+    "validate": "npm run format:check && npm run lint && npm run test:types && npm run test",
+    "prepare": "npm run validate",
+    "docs": "npx typedoc"
+  },
+  "keywords": [
+    "kaios",
+    "b2g",
+    "firefox-os",
+    "typescript",
+    "types",
+    "type-definitions",
+    "declarations",
+    "mobile",
+    "web-api",
+    "kaios-2.5"
+  ],
+  "author": "Tom Barrasso <tom@barrasso.me> (https://barrasso.me/)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tombarr/kaios-types.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tombarr/kaios-types/issues"
+  },
+  "homepage": "https://github.com/Tombarr/kaios-types#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.48.0",
+    "@typescript-eslint/parser": "^8.48.0",
+    "@vitest/ui": "^4.0.13",
+    "eslint": "^9.39.1",
+    "jsdom": "^27.2.0",
+    "prettier": "^3.6.2",
+    "typedoc": "^0.28.14",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.13"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
